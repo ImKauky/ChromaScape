@@ -2,7 +2,6 @@ package com.chromascape.scripts;
 
 import com.chromascape.base.BaseScript;
 import com.chromascape.utils.actions.PointSelector;
-import com.chromascape.utils.core.input.distribution.ClickDistribution;
 import com.chromascape.utils.core.screen.topology.TemplateMatching;
 import com.chromascape.utils.core.screen.window.ScreenManager;
 import java.awt.Point;
@@ -12,16 +11,16 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * Smiths items at varrock west bank.
- * The bank should be tagged YELLOW (255, 255, 0) and the anvil should be tagged CYAN (0, 255, 255).
- * The inventory must be set up so that all of the bars are used up in the smithing process.
- * Ideally, either an imcando hammer is used, otherwise the hammer must be in a locked inventory slot.
- * Left-click bank options must be set to "all".
- * 
- * This script could be improved further by adding detection for red clicks (and repeated attempts in the case of yellow clicks)
- * This would reduce the chance of an action failing due to lag or misclicks.
- * 
- * This script was based off of the DemoWineScript.
+ * Smiths items at varrock west bank. The bank should be tagged YELLOW (255, 255, 0) and the anvil
+ * should be tagged CYAN (0, 255, 255). The inventory must be set up so that all of the bars are
+ * used up in the smithing process. Ideally, either an imcando hammer is used, otherwise the hammer
+ * must be in a locked inventory slot. Left-click bank options must be set to "all".
+ *
+ * <p>This script could be improved further by adding detection for red clicks (and repeated
+ * attempts in the case of yellow clicks) This would reduce the chance of an action failing due to
+ * lag or misclicks.
+ *
+ * <p>This script was based off of the DemoWineScript.
  */
 public class KaukySmither extends BaseScript {
 
@@ -122,10 +121,10 @@ public class KaukySmither extends BaseScript {
   }
 
   /**
-   * Attempts to locate and click a tagged object of the specified color within the game view. 
-   * It searches for contours of the given color, then clicks a randomly distributed point inside 
-   * the contour bounding box, retrying up to a maximum number of attempts. Logs failures and 
-   * stops the script if unable to click successfully.
+   * Attempts to locate and click a tagged object of the specified color within the game view. It
+   * searches for contours of the given color, then clicks a randomly distributed point inside the
+   * contour bounding box, retrying up to a maximum number of attempts. Logs failures and stops the
+   * script if unable to click successfully.
    *
    * @param color the color tag to search for (e.g., "Yellow", "Cyan", "Purple")
    */
@@ -200,7 +199,7 @@ public class KaukySmither extends BaseScript {
         return false;
       }
 
-      //logger.info("Template match succeeded: Image found in inventory slot 27.");
+      // logger.info("Template match succeeded: Image found in inventory slot 27.");
 
       return true;
 
@@ -212,7 +211,8 @@ public class KaukySmither extends BaseScript {
   }
 
   /**
-   * Checks if an image exists in the game view and returns a boolean referring to if it was detected.
+   * Checks if an image exists in the game view and returns a boolean referring to if it was
+   * detected.
    *
    * @param imagePath the path to the image being searched
    * @param threshold the openCV threshold to decide if a match exists
